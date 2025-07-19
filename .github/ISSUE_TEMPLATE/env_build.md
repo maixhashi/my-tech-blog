@@ -1,8 +1,8 @@
 ---
 name: "環境構築/セットアップ"
 description: "開発・実行環境の構築やセットアップに関するIssueはこちら"
-title: "env/{{タイトル}}"
-labels: [env]
+title: "build/{{タイトル}}"
+labels: [build]
 assignees: []
 ---
 

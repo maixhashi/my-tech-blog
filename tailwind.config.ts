@@ -9,6 +9,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '390px',
+        'sm': '768px',
+        'md': '1024px',
+        'lg': '1440px',
+        'xl': '1920px',
+      },
+      maxWidth: {
+        'design-xs': '390px',
+        'design-sm': '768px',
+        'design-md': '1024px',
+        'design-lg': '1440px',
+        'design-xl': '1920px',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

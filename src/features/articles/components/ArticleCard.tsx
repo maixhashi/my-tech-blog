@@ -20,7 +20,7 @@ export function ArticleCard({ post }: Props) {
   const tags = post.tags || ["技術", "ブログ"];
 
   return (
-    <Link href={`/posts/${post.slug}`} className="group">
+    <Link as={`/articles/${post.slug}`} href="/articles/[slug]" className="group">
       <article className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 h-full">
         {/* 絵文字アイコン */}
         <div className="text-4xl mb-4 text-center">

@@ -11,8 +11,8 @@ const Header = () => {
         
         {/* ナビゲーション */}
         <nav className="flex space-x-6 lg:space-x-8">
-          <Link href="/docs" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
-            Docs
+          <Link href="/articles" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+            Articles
           </Link>
           <Link href="/tags" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
             Tags

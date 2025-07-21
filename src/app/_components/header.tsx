@@ -2,12 +2,27 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
-      <Link href="/" className="hover:underline">
-        Blog
-      </Link>
-      .
-    </h2>
+    <header className="py-6 lg:py-8">
+      <div className="flex justify-between items-center">
+        {/* サイトタイトル */}
+        <Link href="/" className="text-2xl lg:text-3xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-200">
+          maixhashi.tech-blog
+        </Link>
+        
+        {/* ナビゲーション */}
+        <nav className="flex space-x-6 lg:space-x-8">
+          <Link href="/docs" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+            Docs
+          </Link>
+          <Link href="/tags" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+            Tags
+          </Link>
+          <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+            About
+          </Link>
+        </nav>
+      </div>
+    </header>
   );
 };
 

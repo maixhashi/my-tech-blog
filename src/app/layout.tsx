@@ -1,4 +1,5 @@
 import Footer from "@/app/_components/footer";
+import Header from "@/app/_components/header";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -10,8 +11,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: `maixhashi.tech-blog`,
+  description: `フルスタックエンジニアとして働いています。GO、Reactに主に触れてます。このサイトではエンジニアとして学んだことや備忘録を書いていきます。`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <link
           rel="apple-touch-icon"
@@ -61,7 +62,10 @@ export default function RootLayout({
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
         <ThemeSwitcher />
-        <div className="min-h-screen">{children}</div>
+        <div className="min-h-screen">
+          <Header />
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

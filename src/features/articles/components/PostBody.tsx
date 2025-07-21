@@ -1,4 +1,4 @@
-import markdownStyles from "./markdown-styles.module.css";
+import markdownStyles from "@/components/markdown/MarkdownStyles.module.css";
 
 type Props = {
   content: string;

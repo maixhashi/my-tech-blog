@@ -1,8 +1,8 @@
-import Container from "@/app/_components/container";
-import { ProfileSection } from "@/app/_components/profile-section";
-import { RecentArticles } from "@/app/_components/recent-articles";
-import { RecommendedArticles } from "@/app/_components/recommended-articles";
-import { TagSearch } from "@/app/_components/tag-search";
+import Container from "@/components/ui/Container";
+import { ProfileSection } from "@/features/users/components/ProfileSection";
+import { RecentArticles } from "@/features/articles/components/RecentArticles";
+import { RecommendedArticles } from "@/features/articles/components/RecommendedArticles";
+import { TagSearch } from "@/features/tags/components/TagSearch";
 import { getAllPosts } from "@/lib/api";
 
 export default function Index() {

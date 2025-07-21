@@ -1,5 +1,5 @@
 import { Post } from "@/interfaces/post";
-import { ArticleCard } from "./article-card";
+import { ArticleCard } from "@/features/articles/components/ArticleCard";
 
 type Props = {
   posts: Post[];

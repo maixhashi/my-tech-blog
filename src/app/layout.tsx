@@ -1,10 +1,10 @@
-import Footer from "@/app/_components/footer";
-import Header from "@/app/_components/header";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
-import { ThemeSwitcher } from "./_components/theme-switcher";
+import { ThemeSwitcher } from "@/components/theme/ThemeSwitcher";
 
 import "./globals.css";
 

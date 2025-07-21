@@ -6,7 +6,7 @@ const Header = () => {
       <div className="flex justify-between items-center">
         {/* サイトタイトル */}
         <Link href="/" className="text-2xl lg:text-3xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-200">
-          maixhashi.tech-blog
+          hashi.tech-blog
         </Link>
         
         {/* ナビゲーション */}

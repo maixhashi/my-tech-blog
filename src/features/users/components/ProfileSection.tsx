@@ -12,7 +12,7 @@ export function ProfileSection() {
       {/* テキスト部分 */}
       <div className="text-center lg:text-left max-w-2xl">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-          maixhashi
+          hashi
         </h1>
         <p className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-8">
           フルスタックエンジニアとして働いています。<br />

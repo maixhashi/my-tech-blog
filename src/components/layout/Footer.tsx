@@ -33,7 +33,7 @@ export function Footer() {
             
             {/* コピーライト */}
             <span className="text-gray-600 text-sm ml-4">
-              © maixhashi
+              © hashi
             </span>
           </div>
           

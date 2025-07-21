@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
 import { ThemeSwitcher } from "@/components/theme/ThemeSwitcher";
+import Container from "@/components/ui/Container";
 
 import "./globals.css";
 
@@ -63,8 +64,10 @@ export default function RootLayout({
       >
         <ThemeSwitcher />
         <div className="min-h-screen">
-          <Header />
-          {children}
+          <Container>
+            <Header />
+            {children}
+          </Container>
         </div>
         <Footer />
       </body>

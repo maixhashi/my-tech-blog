@@ -1,6 +1,6 @@
 import { Post } from "@/interfaces/post";
 import Link from "next/link";
-import DateFormatter from "@/features/articles/components/DateFormatter";
+import { DateFormatter } from "@/features/articles/components/DateFormatter";
 
 type Props = {
   post: Post;

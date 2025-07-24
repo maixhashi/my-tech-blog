@@ -1,6 +1,6 @@
-import Avatar from "@/features/users/components/Avatar";
-import CoverImage from "@/features/articles/components/CoverImage";
-import DateFormatter from "@/features/articles/components/DateFormatter";
+import { Avatar } from "@/features/users/components/Avatar";
+import { CoverImage } from "@/features/articles/components/CoverImage";
+import { DateFormatter } from "@/features/articles/components/DateFormatter";
 import { PostTitle } from "@/features/articles/components/PostTitle";
 import { type Author } from "@/interfaces/author";
 

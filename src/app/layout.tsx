@@ -5,7 +5,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
 import { ThemeSwitcher } from "@/components/theme/ThemeSwitcher";
+import { ThemeInitializer } from "@/components/theme/ThemeInitializer";
 import Container from "@/components/ui/Container";
+import { JotaiProvider } from "@/lib/jotai";
 
 import "./globals.css";
 
@@ -62,14 +64,17 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <ThemeSwitcher />
-        <div className="min-h-screen">
-          <Container>
-            <Header />
-            {children}
-          </Container>
-        </div>
-        <Footer />
+        <JotaiProvider>
+          <ThemeInitializer />
+          <ThemeSwitcher />
+          <div className="min-h-screen">
+            <Container>
+              <Header />
+              {children}
+            </Container>
+          </div>
+          <Footer />
+        </JotaiProvider>
       </body>
     </html>
   );

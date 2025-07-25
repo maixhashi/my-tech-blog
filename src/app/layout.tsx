@@ -14,7 +14,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `maixhashi.tech-blog`,
+  title: `hashi.tech-blog`,
   description: `フルスタックエンジニアとして働いています。GO、Reactに主に触れてます。このサイトではエンジニアとして学んだことや備忘録を書いていきます。`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],

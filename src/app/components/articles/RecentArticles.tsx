@@ -25,7 +25,7 @@ export function RecentArticles({ posts }: Props) {
       {/* すべての記事を見るリンク */}
       <div className="text-center">
         <Link 
-          href="/posts" 
+          href="/articles" 
           className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
         >
           すべての記事を見る

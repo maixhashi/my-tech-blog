@@ -2,7 +2,7 @@
 
 import { memo, useEffect } from "react";
 import { useAtom } from "jotai";
-import { themeAtom, resolvedThemeAtom } from "@/features/tags/atoms";
+import { themeAtom, resolvedThemeAtom, ColorSchemePreference } from "@/features/tags/atoms";
 
 declare global {
   interface Window {
@@ -14,7 +14,7 @@ const STORAGE_KEY = "nextjs-blog-starter-theme";
 
 // FOUCを防ぐための初期化スクリプト
 const NoFOUCScript = (storageKey: string) => {
-  const [SYSTEM, DARK, LIGHT] = ["system", "dark", "light"];
+  const [LIGHT, DARK]: ColorSchemePreference[] = ["light", "dark"];
 
   const modifyTransition = () => {
     const css = document.createElement("style");
@@ -27,22 +27,17 @@ const NoFOUCScript = (storageKey: string) => {
     };
   };
 
-  const media = matchMedia(`(prefers-color-scheme: ${DARK})`);
-
   window.updateDOM = () => {
     const restoreTransitions = modifyTransition();
-    const mode = localStorage.getItem(storageKey) ?? SYSTEM;
-    const systemMode = media.matches ? DARK : LIGHT;
-    const resolvedMode = mode === SYSTEM ? systemMode : mode;
+    const mode = localStorage.getItem(storageKey) ?? LIGHT;
     const classList = document.documentElement.classList;
-    if (resolvedMode === DARK) classList.add(DARK);
+    if (mode === DARK) classList.add(DARK);
     else classList.remove(DARK);
     document.documentElement.setAttribute("data-mode", mode);
     restoreTransitions();
   };
   
   window.updateDOM();
-  media.addEventListener("change", window.updateDOM);
 };
 
 const Script = memo(() => (

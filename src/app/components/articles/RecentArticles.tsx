@@ -1,5 +1,5 @@
 import { Post } from "@/interfaces/post";
-import { ArticleCard } from "@/features/articles/components/ArticleCard";
+import { ArticleCard } from "@/app/components/articles/ArticleCard";
 import Link from "next/link";
 
 type Props = {

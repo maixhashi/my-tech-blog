@@ -2,7 +2,7 @@
 
 import { memo, useEffect } from "react";
 import { useAtom } from "jotai";
-import { themeAtom, resolvedThemeAtom, ColorSchemePreference } from "@/features/tags/atoms";
+import { themeAtom, resolvedThemeAtom, ColorSchemePreference } from "@/features/theme/atoms";
 
 declare global {
   interface Window {

@@ -1,9 +1,6 @@
 // ユーザー関連の型定義
 export interface UserSettings {
   fontSize: "small" | "medium" | "large";
-  showReadingTime: boolean;
-  showTableOfContents: boolean;
-  autoSave: boolean;
 }
 
 export interface User {

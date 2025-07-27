@@ -2,9 +2,6 @@ import { atom } from "jotai";
 
 export interface UserSettings {
   fontSize: "small" | "medium" | "large";
-  showReadingTime: boolean;
-  showTableOfContents: boolean;
-  autoSave: boolean;
 }
 
 const STORAGE_KEY = "user-settings";
@@ -12,12 +9,9 @@ const STORAGE_KEY = "user-settings";
 // ローカルストレージから初期値を取得する関数
 const getInitialSettings = (): UserSettings => {
   if (typeof window === "undefined") {
-    return {
-      fontSize: "medium",
-      showReadingTime: true,
-      showTableOfContents: true,
-      autoSave: true,
-    };
+      return {
+    fontSize: "medium",
+  };
   }
   
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -31,9 +25,6 @@ const getInitialSettings = (): UserSettings => {
   
   return {
     fontSize: "medium",
-    showReadingTime: true,
-    showTableOfContents: true,
-    autoSave: true,
   };
 };
 
@@ -60,26 +51,5 @@ export const fontSizeAtom = atom(
   (get) => get(userSettingsAtom).fontSize,
   (get, set, fontSize: UserSettings["fontSize"]) => {
     set(updateUserSettingsAtom, { fontSize });
-  }
-);
-
-export const showReadingTimeAtom = atom(
-  (get) => get(userSettingsAtom).showReadingTime,
-  (get, set, showReadingTime: boolean) => {
-    set(updateUserSettingsAtom, { showReadingTime });
-  }
-);
-
-export const showTableOfContentsAtom = atom(
-  (get) => get(userSettingsAtom).showTableOfContents,
-  (get, set, showTableOfContents: boolean) => {
-    set(updateUserSettingsAtom, { showTableOfContents });
-  }
-);
-
-export const autoSaveAtom = atom(
-  (get) => get(userSettingsAtom).autoSave,
-  (get, set, autoSave: boolean) => {
-    set(updateUserSettingsAtom, { autoSave });
   }
 ); 

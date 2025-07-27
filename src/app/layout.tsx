@@ -3,7 +3,7 @@ import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
-import { ThemeSwitcher } from "./_components/theme-switcher";
+import { ThemeSwitcher } from "@/components/theme/ThemeSwitcher";
 
 import "./globals.css";
 
@@ -60,7 +60,10 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <ThemeSwitcher />
+        {/* Fixed theme switcher in top-right corner */}
+        <div className="fixed top-4 right-4 z-50">
+          <ThemeSwitcher />
+        </div>
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>

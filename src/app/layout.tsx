@@ -1,17 +1,21 @@
-import Footer from "@/app/_components/footer";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
-import { ThemeSwitcher } from "./_components/theme-switcher";
+import { ThemeSwitcher } from "@/components/theme/ThemeSwitcher";
+import { ThemeInitializer } from "@/components/theme/ThemeInitializer";
+import Container from "@/components/ui/Container";
+import { JotaiProvider } from "@/lib/jotai";
 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: `hashi.tech-blog`,
+  description: `フルスタックエンジニアとして働いています。GO、Reactに主に触れてます。このサイトではエンジニアとして学んだことや備忘録を書いていきます。`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -23,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <link
           rel="apple-touch-icon"
@@ -60,9 +64,20 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <ThemeSwitcher />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
+        <JotaiProvider>
+          <ThemeInitializer />
+          {/* Fixed theme switcher in top-right corner */}
+          <div className="fixed top-4 right-4 z-50">
+            <ThemeSwitcher />
+          </div>
+          <div className="min-h-screen">
+            <Container>
+              <Header />
+              {children}
+            </Container>
+          </div>
+          <Footer />
+        </JotaiProvider>
       </body>
     </html>
   );

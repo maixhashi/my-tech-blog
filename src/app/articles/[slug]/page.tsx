@@ -3,10 +3,10 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Alert from "@/components/alert/Alert";
+import Alert from "@/app/_components/alert";
 import Container from "@/components/ui/Container";
-import { PostBody } from "@/features/articles/components/PostBody";
-import { PostHeader } from "@/features/articles/components/PostHeader";
+import { PostBody } from "@/app/_components/post-body";
+import { PostHeader } from "@/app/_components/post-header";
 
 export default async function Post(props: Params) {
   const params = await props.params;

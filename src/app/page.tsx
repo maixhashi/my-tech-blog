@@ -1,7 +1,7 @@
 import Container from "@/components/ui/Container";
-import { ProfileSection } from "@/features/users/components/ProfileSection";
-import { RecentArticles } from "@/features/articles/components/RecentArticles";
-import { RecommendedArticles } from "@/features/articles/components/RecommendedArticles";
+import { ProfileSection } from "@/app/components/users/ProfileSection";
+import { RecentArticles } from "@/app/components/articles/RecentArticles";
+import { RecommendedArticles } from "@/app/components/articles/RecommendedArticles";
 import { getAllPosts } from "@/lib/api";
 
 export default function Index() {

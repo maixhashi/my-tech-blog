@@ -6,7 +6,7 @@ import { useAtom } from "jotai";
 import { themeAtom, themeEffectAtom, ColorSchemePreference } from "@/features/tags/atoms";
 
 const STORAGE_KEY = "nextjs-blog-starter-theme";
-const modes: ColorSchemePreference[] = ["system", "dark", "light"];
+const modes: ColorSchemePreference[] = ["light", "dark"];
 
 /**
  * Switch button to quickly toggle user preference.

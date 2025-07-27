@@ -1,12 +1,14 @@
-import { getAllPosts } from "@/lib/api";
+import { Post } from "@/interfaces/post";
 import { ArticleCard } from "@/app/components/articles/ArticleCard";
 import { MainTitle } from "@/app/components/articles/MainTitle";
 import { FilterSearchBar } from "@/app/components/articles/FilterSearchBar";
 import { Pagination } from "@/app/components/articles/Pagination";
 
-export default function ArticlesPage() {
-  const allPosts = getAllPosts();
-  
+type Props = {
+  posts: Post[];
+};
+
+export function ArticlesGrid({ posts }: Props) {
   return (
     <div className="min-h-screen bg-white">
       <main>
@@ -16,7 +18,7 @@ export default function ArticlesPage() {
 
           {/* 記事グリッド */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {allPosts.map((post, index) => (
+            {posts.map((post, index) => (
               <ArticleCard key={post.slug} post={post} />
             ))}
           </div>

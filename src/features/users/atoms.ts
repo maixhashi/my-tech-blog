@@ -47,7 +47,8 @@ export const updateUserSettingsAtom = atom(
 );
 
 // 個別の設定用のatom
-export const fontSizeAtom = atom(
+export const exampleAtom = atom(
+  // 文字の大きさを設定するAtom(例)
   (get) => get(userSettingsAtom).fontSize,
   (get, set, fontSize: UserSettings["fontSize"]) => {
     set(updateUserSettingsAtom, { fontSize });

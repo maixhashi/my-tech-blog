@@ -1,29 +1,24 @@
-import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
+import Container from "@/components/ui/Container";
+import { ProfileSection } from "@/features/users/components/ProfileSection";
+import { RecentArticles } from "@/features/articles/components/RecentArticles";
+import { RecommendedArticles } from "@/features/articles/components/RecommendedArticles";
 import { getAllPosts } from "@/lib/api";
 
 export default function Index() {
   const allPosts = getAllPosts();
 
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
+  // 最近の記事（最新6件）
+  const recentPosts = allPosts.slice(0, 6);
+  
+  // おすすめの記事（次の9件）
+  const recommendedPosts = allPosts.slice(6, 15);
 
   return (
-    <main>
+    <main className="min-h-screen">
       <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <ProfileSection />
+        <RecentArticles posts={recentPosts} />
+        <RecommendedArticles posts={recommendedPosts} />
       </Container>
     </main>
   );
